@@ -1,2 +1,5 @@
+*.swp
+
+/.bundle
 /.vagrant
 /provisioning/setup.retry
