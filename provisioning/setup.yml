@@ -71,7 +71,7 @@
       become_user: vagrant
 
     - name: install cabal packages
-      shell: cabal install pandoc-1.17.0.2 pandoc-crossref-0.2.1.3 pandoc-citeproc-0.10.1 pandoc-citeproc-preamble-1.0.0
+      shell: cabal install pandoc-1.17.2 pandoc-crossref-0.2.3.0 pandoc-citeproc-0.10.1 pandoc-citeproc-preamble-1.0.0
       environment:
         PATH: "{{ ansible_env.PATH }}:/opt/ghc/7.10.3/bin:/opt/cabal/1.24/bin"
       become: yes
