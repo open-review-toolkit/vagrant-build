@@ -33,6 +33,9 @@
     - name: add cd command to .bashrc
       lineinfile: dest=/home/vagrant/.bashrc line="cd open-review-toolkit/"
 
+    - name: add path update to .profile
+      lineinfile: dest=/home/vagrant/.profile line="PATH=$PATH:$HOME/.cabal/bin"
+
     - name: create .bundle directory
       file: path=/home/vagrant/.bundle state=directory owner=vagrant group=vagrant
 
