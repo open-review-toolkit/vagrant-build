@@ -106,21 +106,21 @@
       apt_repository: repo='deb http://ppa.launchpad.net/hvr/ghc/ubuntu xenial main' state=present
 
     - name: install haskell
-      apt: name=ghc-7.10.3 state=present
+      apt: name=ghc-8.4.2 state=present
     - name: install cabal
-      apt: name=cabal-install-1.24 state=present
+      apt: name=cabal-install-2.2 state=present
 
     - name: update cabal
       command: cabal update creates=~/.cabal/packages/
       environment:
-        PATH: "{{ ansible_env.PATH }}:/opt/ghc/7.10.3/bin:/opt/cabal/1.24/bin"
+        PATH: "{{ ansible_env.PATH }}:/opt/ghc/8.4.2/bin:/opt/cabal/2.2/bin"
       become: yes
       become_user: vagrant
 
     - name: install cabal packages
-      shell: cabal install Cabal-1.24.2.0 pandoc-1.19.2.4 pandoc-crossref pandoc-citeproc pandoc-citeproc-preamble pandoc-sidenote
+      shell: cabal install Cabal-2.2.0.1 pandoc-2.2 pandoc-crossref pandoc-citeproc pandoc-citeproc-preamble pandoc-sidenote
       environment:
-        PATH: "{{ ansible_env.PATH }}:/opt/ghc/7.10.3/bin:/opt/cabal/1.24/bin"
+        PATH: "{{ ansible_env.PATH }}:/opt/ghc/8.4.2/bin:/opt/cabal/2.2/bin"
       become: yes
       become_user: vagrant
 
